@@ -2,21 +2,16 @@ spring:
   application:
     name: storage
 
-#  datasource:
-#    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/storage}
-#    username: ${SPRING_DATASOURCE_USERNAME:postgres}
-#    password: ${SPRING_DATASOURCE_PASSWORD:admin}
-#    driver-class-name: org.postgresql.Driver
-    datasource:
-      url: ${SPRING_DATASOURCE_URL}
-      username: ${SPRING_DATASOURCE_USERNAME}
-      password: ${SPRING_DATASOURCE_PASSWORD}
-      driver-class-name: org.postgresql.Driver
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
 
-    jpa:
-      hibernate:
-        ddl-auto: update
-      show-sql: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -26,27 +21,6 @@ springdoc:
     path: /v3/api-docs
   swagger-ui:
     path: /swagger-ui.html
-
-info:
-  title: Storage API
-  description: API para gerenciamento de estoque e movimentações 3D
-  version: 1.0.0
-  contact:
-    name: Vinicius Eduardo Da Silva
-    email: viniciuseduardo0702@hotmail.com
-
-logging:
-  level:
-    com.wester.storage: DEBUG
-    org.springframework.web: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 
 server:
   address: 0.0.0.0
