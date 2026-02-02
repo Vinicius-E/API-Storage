@@ -19,7 +19,7 @@ spring:
     show-sql: ${SPRING_JPA_SHOW_SQL:true}
     properties:
       hibernate:
-        dialect: ${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 springdoc:
   api-docs:
